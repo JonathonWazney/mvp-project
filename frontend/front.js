@@ -86,7 +86,7 @@ let options;
 btn.addEventListener("click", getlist);
 
 async function getuser() {
-  const result = await fetch("http://localhost:3000/api/user");
+  const result = await fetch("https://morning-fortress-69867.herokuapp.com/api/user");
   const data = await result.json();
   data.forEach((element) => {
     userinoptions(element);
@@ -106,7 +106,7 @@ async function getlist(event) {
     let ul = document.querySelector(".listItems");
     ul.innerHTML = ''
   const user = document.getElementById("user").value;
-  let result = await fetch(`http://localhost:3000/api/list/${user}`);
+  let result = await fetch(`https://morning-fortress-69867.herokuapp.com/api/list/${user}`);
   let data = await result.json();
      data.forEach(elm =>{
          createDataLi(elm)
@@ -144,7 +144,7 @@ let data = {username:`${newuser}`}
         },
         body: JSON.stringify(data)
     }
-    let post = await fetch('http://localhost:3000/api/user',method)
+    let post = await fetch('https://morning-fortress-69867.herokuapp.com/api/user',method)
     let response = await post.json()
     console.log(response)
 
@@ -164,7 +164,7 @@ async function posttask(){
             },
             body: JSON.stringify(data)
         }
-        let post = await fetch('http://localhost:3000/api/list',method)
+        let post = await fetch('https://morning-fortress-69867.herokuapp.com/api/list',method)
         let response = await post.json()
         console.log(response)
 
@@ -184,7 +184,7 @@ async function deletetask(e){
             body: JSON.stringify(data)
            
         }
-        let post = await fetch('http://localhost:3000/api/list',method)
+        let post = await fetch('https://morning-fortress-69867.herokuapp.com/api/list',method)
         let response = await post.json()
         console.log(response)
 
