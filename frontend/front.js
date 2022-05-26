@@ -136,7 +136,7 @@ newuserbtn.addEventListener('click', createUser)
 
 async function createUser(){
     let newuser = document.getElementById('newuser').value
-let data = {username:`${newuser}`}
+    let data = {username:`${newuser}`}
     let method = {
         method: 'post',
         headers:{
@@ -147,6 +147,7 @@ let data = {username:`${newuser}`}
     let post = await fetch('https://morning-fortress-69867.herokuapp.com/api/user',method)
     let response = await post.json()
     console.log(response)
+    newuser = ''
 
 }
 let post = document.getElementById('post')
@@ -154,19 +155,19 @@ post.addEventListener('click',posttask)
 async function posttask(){
     let newtask = document.getElementById('newtask')
     console.log(newtask)
-    newtask.value = ''
     let user = document.getElementById('user').value
     let data = {task:`${newtask.value}`, userid:`${user}`}
-        let method = {
-            method: 'post',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }
-        let post = await fetch('https://morning-fortress-69867.herokuapp.com/api/list',method)
-        let response = await post.json()
-        console.log(response)
+    let method = {
+        method: 'post',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }
+    let post = await fetch('https://morning-fortress-69867.herokuapp.com/api/list',method)
+    let response = await post.json()
+    console.log(response)
+    newtask.value = ''
 
 
 }
