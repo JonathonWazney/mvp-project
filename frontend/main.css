@@ -27,9 +27,8 @@ body{
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
-    text-align: center;
-  
-    
+    display: flex;
+    justify-content: center;
 }
 .newpost{
     background-color: whitesmoke;
@@ -86,9 +85,10 @@ body{
     position: absolute;
     bottom: 5.4rem;
     height: 2rem;
-    left: 4rem;
+    left: 4.4rem;
     float: right;
     width: fit-content;
+
 }
 .list{
     color: black;
@@ -98,5 +98,29 @@ body{
  font-size: 2rem;
 }
 .newuser{
-    margin: 3px;
+  margin: .5rem;
+    
+}
+.new{
+   text-align: center;
+   align-items: center;
+   margin: 1rem;
+}
+img{
+    height: 2rem;
+    position: absolute;
+    left: .2rem;
+    top: .5rem;
+}
+.updateuser{
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+}
+.delete{
+    align-self: center;
+    
+}
+#update,#deleteUser{
+    margin: 5px;
 }

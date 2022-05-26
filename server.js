@@ -61,15 +61,16 @@ app.post('/api/user', async (req,res) => {
         
     }
 })
-app.patch('/api/list', async (req,res) =>{
+app.patch('/api/user', async (req,res) =>{
     try {
-        let id = req.body.list_id
-        let task = req.body.task
-        await db.query('UPDATE list SET task = $1 WHERE list_id = $2 RETURNING *',[task,id])
-        res.send('updated')
+        let id = req.body.id
+        let user = req.body.username
+        
+        await db.query('UPDATE person SET username = $1 WHERE id = $2 RETURNING *',[user,id])
+      res.json('updated')
     } catch (error) {
         console.log(error.message)
-        res.send(error.message)
+        res.json(error.message)
     }
 })
 
@@ -87,7 +88,7 @@ app.delete('/api/user', async (req,res) =>{
     try {
         let id = req.body.id
         await db.query('DELETE FROM person WHERE id = $1',[id])
-        res.send('deleted')
+        res.json('deleted')
     } catch (error) {
         console.log(error.message)
         res.send(error.message)   
